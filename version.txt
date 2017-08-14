@@ -1,1 +1,1 @@
-application/core/GO_Controller.php,application/core/index.php
+application/core/GO_Controller.php,application/core/index.html
