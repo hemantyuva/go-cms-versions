@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //////////////////////////////// core file ///////////////////////////////
 ///////////////////////////////// go-cms /////////////////////////////////
-
+/******************************* VERSION 1.2 ****************************/
     /**
      *  This is a core go-cms file.  Do not edit if you plan to
      *  ever update your go-cms version.  Changes would be lost.
@@ -181,7 +181,24 @@ class GO_Admin_model extends GO_model
         }
 
         return $return;
-    }    
+    }
+
+    /*
+    *
+    * Get Current Version of Go Version
+    *
+    * @return $currentVersion
+    *
+    */
+
+    public function go_get_version(){
+
+      $currentVersion = $this->db->select()
+        ->where('meta_key','current_version')
+        ->get('go_system_info');
+
+      return $currentVersion->row();
+    }
 
 }
 
